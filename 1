@@ -1,0 +1,50 @@
+#include <algorithm>
+#include <iostream>
+using namespace std;
+int main()
+{
+    setlocale(LC_ALL, "rus");
+    string mobileNumbers[5] = { "89245763467", "89144975843", "89241755608", "89143869854", "89249843256"};
+    string homeNumbers[5] = { "4998675243", "4994569867", "4992862034", "4997819283", "4995979830" };
+    int vibor;
+
+	do
+	{
+        cout << "\nМеню:" << endl;
+        cout << "1. Отсортировать по номерам мобильных" << endl;
+        cout << "2. Отсортировать по домашним номерам телефонов" << endl;
+        cout << "3. Вывести данные" << endl;
+        cout << "0. Выход" << endl;
+        cout << "Выберите действие: ";
+        cin >> vibor;
+
+        switch (vibor)
+        {
+        case 1:
+            sort(mobileNumbers, mobileNumbers + 5);
+            break;
+        case 2:
+            sort(homeNumbers, homeNumbers + 5);
+            break;
+        case 3:
+            cout << "\nТелефоные номера " << endl ;
+            for (int i = 0; i < 5; i++)
+            {
+                cout << mobileNumbers[i] << " ";
+
+            }
+            cout << "\nДомашние номера " << endl;
+            for (int i = 0; i < 5; i++)
+            {
+                cout << homeNumbers[i] << " ";
+            }
+            break;
+        default:
+            cout << "Нет такого";
+            break;
+        }
+	} while (vibor != 0);
+
+    
+}
+
