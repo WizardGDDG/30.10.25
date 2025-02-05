@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	int arr[7] = { 64, 34, 25, 12, 22, 11, 90 };
+	bool swapped;
+    setlocale(LC_ALL, "rus");
+	for (int i = 0; i < 7; i++)
+	{
+		swapped = false;
+		for (int j = 0; j < 6; j++)
+		{
+			if (arr[j] < arr[j+1])
+			{
+				int b = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = b;
+				swapped = true;
+			}
+		}
+		if (!swapped)
+		{
+			break;
+		}
+	}
+	cout << "Оладья в отсортированном виде: ";
+	for (int i = 0; i < 7; i++)
+	{
+		cout << arr[i] << " ";
+	}
+    
+}
+
